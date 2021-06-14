@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        int b = 0;
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
@@ -17,11 +16,12 @@ public class Main {
         }
         for(int i=0;i<arrayList.size();i++) {
             for(int j=0;j<arrayList.size();j++) {
-                if(arrayList.get(i) + arrayList.get(j) == 2020 && b == 0) {
+                if(arrayList.get(i) + arrayList.get(j) == 2020) {
                     System.out.print("The two numbers are: "+ arrayList.get(i) +" and "+ arrayList.get(j)+" which if you multiply them together results in the product: "+arrayList.get(i)*arrayList.get(j));
-                    b++;
                 }
+                return;
             }
+            return;
         }
     }
 }
