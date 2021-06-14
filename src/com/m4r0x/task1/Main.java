@@ -12,21 +12,15 @@ public class Main {
         boolean foundNumbers = false;
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
         while (scan.hasNextLine()) {
             int i = Integer.parseInt(scan.nextLine());
             arrayList.add(i);
         }
-        for(int i=0;i<arrayList.size();i++) {
-            for(int j=0;j<arrayList.size();j++) {
-                if(arrayList.get(i) + arrayList.get(j) == 2020) {
-                    System.out.println("The two numbers are: " + arrayList.get(i) + " and " + arrayList.get(j) + " which if you multiply them together results in the product: " + arrayList.get(i) * arrayList.get(j));
-                    foundNumbers = true;
-                    break;
-                }
-                if(foundNumbers) {
-                    break;
-                }
+        for(Integer a : arrayList) {
+            if(arrayList.contains(2020-a)) {
+                System.out.println("The two numbers that add up to 2020 in the given Input are: " + a + " and " + (2020 - a) + "\nThe product of said 2 integers is: " + a * (2020 - a));
+                break;
             }
         }
         System.out.println(System.nanoTime() - startTime+" nanoseconds");
