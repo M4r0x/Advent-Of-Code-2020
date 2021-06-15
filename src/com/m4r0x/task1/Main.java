@@ -26,7 +26,7 @@ public class Main {
             } else if (leftPointer + rightPointer > sum) {
                 rightPointer = input.lower(rightPointer); //rightPointer moves to next lower value of the TreeSet
             } else {
-                System.out.println("There is no given pair numbers in the TreeSet that adds up to the given sum.");
+                System.out.println("There is no given pair of numbers in the TreeSet that adds up to the given sum.");
                 break;
             }
         }
