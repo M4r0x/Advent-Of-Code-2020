@@ -5,14 +5,15 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException, NoSuchElementException {
+    public static void main(String[] args) throws FileNotFoundException {
         part1v1();
         part1v2();
         part2v1();
         part2v2();
+
     }
 
-    public static void part1v1() throws FileNotFoundException { // fast version of part 1 of task 1
+    static void part1v1() throws FileNotFoundException { // fast version of part 1 of task 1
         long startTime = System.nanoTime();
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
@@ -36,7 +37,7 @@ public class Main {
         System.out.println((System.nanoTime() - startTime) + " nanoseconds");
     }
 
-    public static void part1v2() throws FileNotFoundException { // slow version of part 1 of task 1
+    static void part1v2() throws FileNotFoundException { // slow version of part 1 of task 1
         long startTime = System.nanoTime();
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
@@ -54,7 +55,7 @@ public class Main {
         System.out.println((System.nanoTime() - startTime) + " nanoseconds");
     }
 
-    public static void part2v1() throws FileNotFoundException, NoSuchElementException { // fast version of part 2 of task 1
+    static void part2v1() throws FileNotFoundException { // fast version of part 2 of task 1
         long startTime = System.nanoTime();
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
@@ -82,7 +83,7 @@ public class Main {
         System.out.println((System.nanoTime() - startTime) + " nanoseconds");
     }
 
-    public static void part2v2() throws FileNotFoundException { // slow version of part 2 of task 1
+    static void part2v2() throws FileNotFoundException { // slow version of part 2 of task 1
         long startTime = System.nanoTime();
         File input = new File("input/task1input");
         Scanner scan = new Scanner(input);
