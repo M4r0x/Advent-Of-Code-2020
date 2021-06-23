@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         part1v1();
+        part2v1();
     }
 
     static void part1v1() throws FileNotFoundException {
@@ -16,14 +17,12 @@ public class Main {
         Scanner scan = new Scanner(input);
         while (scan.hasNextLine()) {
             int curFoundCharCount = 0;
-            String checkSum = scan.next(); // enter first token of current input line which is the checkSum
-            String[] checkSumValues = checkSum.split("-"); /* split the second token to see what the maximum and minimum
-            allowed amount of the specified character in the password input is */
+            String[] checkSumValues = scan.next().split("-");
             int curCharCountMin = Integer.parseInt(checkSumValues[0]);
             int curCharCountMax = Integer.parseInt(checkSumValues[1]);
-            char curSearchedChar = scan.next().toCharArray()[0]; // sets the current specified character we are searching for
+            char curSearchedChar = scan.next().toCharArray()[0];
             char[] curPasswordInput = scan.next().toCharArray();
-            for (Character a : curPasswordInput) { // search through the third token for specified character and count up if found
+            for (Character a : curPasswordInput) {
                 if (a == curSearchedChar) {
                     curFoundCharCount++;
                 }
@@ -34,5 +33,24 @@ public class Main {
         }
         System.out.println("part 1 version 1: " + numberOfValidPasswords);
         System.out.println((System.nanoTime() - startTime) + " nanoseconds");
+    }
+    static void part2v1() throws FileNotFoundException {
+        long startTime = System.nanoTime();
+        int numberOfValidPasswords = 0;
+        File input = new File("input/task2input");
+        Scanner scan = new Scanner(input);
+        while (scan.hasNextLine()) {
+            String[] charPositions = scan.next().split("-");
+            int firstPos = Integer.parseInt(charPositions[0])-1;
+            int secondPos = Integer.parseInt(charPositions[1])-1;
+            char searchedChar = scan.next().toCharArray()[0];
+            char[] passwordInput = scan.next().toCharArray();
+            if( passwordInput[firstPos] == searchedChar ^ passwordInput[secondPos] == searchedChar) {
+                numberOfValidPasswords++;
+            }
+        }
+        System.out.println("part 2 version 1: " + numberOfValidPasswords);
+        System.out.println((System.nanoTime() - startTime) + " nanoseconds");
+
     }
 }
