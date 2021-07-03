@@ -34,7 +34,7 @@ public class Main {
                     treesEncountered++;
                 }
             } catch (IndexOutOfBoundsException e) {
-                System.out.println(treesEncountered);
+                System.out.println("part 1 version 1: "+treesEncountered);
                 break;
             }
     }
@@ -89,6 +89,6 @@ public class Main {
         for (Integer i : results) {
             product *= i;
         }
-        System.out.println(product);
+        System.out.println("part 2 version 1: "+product);
     }
 }
